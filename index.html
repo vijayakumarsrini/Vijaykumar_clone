@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vijaya Kumar K | Marketing & Sales Professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07090d; --bg2:#0f1218; --ink:#e9e3d6; --dim:#9a9484;
+  --red:#e50914; --glow:#ff2a3a; --lamp:#ffc857; --line:#2a1a1d;
+  --display:'Playfair Display','Libre Baskerville',Georgia,serif;
+  --type:'Special Elite','Courier New',Courier,monospace;
+}
+body.upside{
+  --bg:#0a0f1d; --bg2:#0e1730; --ink:#cfe0ff; --dim:#7f93b8;
+  --red:#3d7bff; --glow:#6aa2ff; --lamp:#9fd0ff; --line:#18264a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--type);font-size:17px;line-height:1.7;transition:background .8s,color .8s;overflow-x:hidden}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px);mix-blend-mode:multiply}
+#spores{position:fixed;inset:0;z-index:0;pointer-events:none}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--lamp);outline-offset:3px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.8rem 1.4rem;background:linear-gradient(var(--bg),transparent)}
+nav .links{display:flex;gap:1.2rem;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--dim);font-size:.95rem}
+nav a:hover{color:var(--glow);text-shadow:0 0 8px var(--glow)}
+#flip{font-family:var(--type);background:none;color:var(--ink);border:1px solid var(--red);padding:.35rem .8rem;cursor:pointer;border-radius:2px;white-space:nowrap}
+#flip:hover{box-shadow:0 0 12px var(--glow);color:var(--glow)}
+
+main{position:relative;z-index:1}
+section{max-width:960px;margin:0 auto;padding:6rem 1.4rem 2rem}
+h2{font-family:var(--display);font-weight:900;font-size:clamp(2rem,5vw,3rem);color:var(--red);text-shadow:0 0 14px var(--glow),0 0 2px var(--glow);letter-spacing:.04em;margin-bottom:2rem;line-height:1.1}
+
+/* HERO: the title-card moment */
+#top{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding-top:5rem}
+.presents{color:var(--dim);margin-bottom:1.5rem;font-size:1rem}
+.name{font-family:var(--display);font-weight:900;font-size:clamp(2.6rem,11vw,7.5rem);line-height:1;color:var(--bg);-webkit-text-stroke:2px var(--red);text-shadow:0 0 18px var(--glow),0 0 50px rgba(229,9,20,.55);letter-spacing:.06em;animation:converge 2.8s cubic-bezier(.2,.8,.2,1) both,flicker 7s 3s infinite}
+.bar{height:3px;width:min(520px,80%);margin:1.2rem auto;background:var(--red);box-shadow:0 0 14px var(--glow);animation:grow 2.4s .6s both}
+.role{font-size:clamp(1.05rem,2.6vw,1.5rem);color:var(--ink)}
+.tag{color:var(--dim);margin-top:.5rem;font-size:.95rem}
+.cta{margin-top:2.2rem;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.btn{padding:.7rem 1.4rem;border:1px solid var(--red);text-decoration:none;background:transparent;color:var(--ink);transition:.25s}
+.btn:hover,.btn.solid{background:var(--red);color:#fff;box-shadow:0 0 18px var(--glow)}
+.btn.solid:hover{background:transparent;color:var(--glow)}
+@keyframes converge{from{letter-spacing:.7em;opacity:0;filter:blur(8px)}to{letter-spacing:.06em;opacity:1;filter:blur(0)}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes flicker{0%,4%,8%,100%{opacity:1}5%{opacity:.35}6%{opacity:1}7%{opacity:.5}60%{opacity:1}61%{opacity:.6}62%{opacity:1}}
+
+/* About */
+.about{display:grid;grid-template-columns:1.6fr 1fr;gap:2.5rem;align-items:start}
+.about p{max-width:62ch}
+.case{background:var(--bg2);border:1px solid var(--line);padding:1.3rem;border-left:4px solid var(--red)}
+.case h3{font-family:var(--display);font-size:1.15rem;margin-bottom:.6rem;color:var(--lamp)}
+.case dl{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem;font-size:.95rem}
+.case dt{color:var(--dim)}
+
+/* Abilities */
+.chips{display:flex;flex-wrap:wrap;gap:.7rem}
+.chip{padding:.45rem .95rem;border:1px solid var(--line);background:var(--bg2);cursor:default;transition:.2s}
+.chip:hover{border-color:var(--glow);color:var(--glow);box-shadow:0 0 12px var(--glow)}
+
+/* Chapters timeline */
+.tl{position:relative;padding-left:2rem;border-left:2px solid var(--red);box-shadow:-6px 0 14px -8px var(--glow)}
+.ch{position:relative;margin-bottom:2.8rem}
+.ch::before{content:"";position:absolute;left:calc(-2rem - 8px);top:.55rem;width:14px;height:14px;border-radius:50%;background:var(--lamp);box-shadow:0 0 12px var(--lamp)}
+.ch .when{color:var(--dim);font-size:.95rem}
+.ch h3{font-family:var(--display);font-size:1.5rem;line-height:1.25}
+.ch .co{color:var(--glow);margin-bottom:.7rem}
+.ch ul{padding-left:1.1rem;max-width:68ch}
+.ch li{margin-bottom:.45rem}
+.ch li::marker{color:var(--red)}
+
+/* Achievements + education */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.two h3{font-family:var(--display);font-size:1.35rem;color:var(--lamp);margin-bottom:1rem}
+.two li{margin:0 0 .8rem 1.1rem}
+.two li::marker{color:var(--red)}
+.edu b{display:block;color:var(--ink)}
+.edu span{color:var(--dim);font-size:.95rem}
+.edu li{list-style:none;margin-left:0}
+
+/* Contact: Joyce's wall */
+.wall{display:flex;flex-wrap:wrap;gap:.4rem .1rem;justify-content:center;margin:1.5rem 0 2.5rem;padding:1rem 0;background:repeating-linear-gradient(90deg,transparent 0 2px,transparent 2px)}
+.bulb{width:clamp(34px,8vw,58px);text-align:center;font-family:var(--display);font-weight:900;font-size:clamp(1.3rem,4vw,2.2rem);color:#333;transition:color .15s,text-shadow .15s;cursor:pointer}
+.bulb::before{content:"";display:block;width:8px;height:8px;margin:0 auto .15rem;border-radius:50%;background:#333;transition:.15s}
+.bulb.on{color:var(--c)}
+.bulb.on::before{background:var(--c);box-shadow:0 0 12px 4px var(--c)}
+.bulb.on{text-shadow:0 0 14px var(--c)}
+.contact{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.fine{text-align:center;color:var(--dim);font-size:.9rem;padding:4rem 1rem 2.5rem}
+
+@media(max-width:760px){
+  .about,.two{grid-template-columns:1fr}
+  nav .links{display:none}
+  .tl{padding-left:1.4rem}
+  .ch::before{left:calc(-1.4rem - 8px)}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<canvas id="spores" aria-hidden="true"></canvas>
+
+<nav>
+  <div class="links">
+    <a href="#top">Home</a><a href="#about">Case file</a><a href="#skills">Abilities</a>
+    <a href="#experience">Chapters</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+  </div>
+  <button id="flip" type="button" aria-pressed="false">Flip to the Upside Down</button>
+</nav>
+
+<main>
+<section id="top">
+  <p class="presents">Hawkins, 1983. A Netflix-style portfolio of</p>
+  <h1 class="name">VIJAYA KUMAR K</h1>
+  <div class="bar"></div>
+  <p class="role">Marketing &amp; Sales Professional</p>
+  <p class="tag">5+ years in FMCG, real estate and quick-commerce. Based in Chennai.</p>
+  <div class="cta">
+    <a class="btn solid" href="#experience">Open the chapters</a>
+    <a class="btn" href="#contact">Send a signal</a>
+  </div>
+</section>
+
+<section id="about">
+  <h2>The Case File</h2>
+  <div class="about">
+    <div>
+      <p>I'm a results-driven marketing and sales professional. Over 5+ years I've worked on demand generation, brand management and B2C sales across FMCG, real estate and e-commerce.</p>
+      <p style="margin-top:1rem">My work is building go-to-market strategies, growing market penetration and strengthening sales pipelines. I lean on competitive analysis and close work with sales teams. An engineering degree and an MBA in Marketing &amp; Finance give me an analytical base.</p>
+    </div>
+    <aside class="case">
+      <h3>Subject profile</h3>
+      <dl>
+        <dt>Name</dt><dd>Vijaya Kumar K</dd>
+        <dt>Base</dt><dd>Madipakkam, Chennai</dd>
+        <dt>Degrees</dt><dd>MBA (Marketing &amp; Finance), B.E. (EEE)</dd>
+        <dt>Sectors</dt><dd>FMCG, real estate, quick-commerce</dd>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Abilities</h2>
+  <div class="chips">
+    <span class="chip">Demand Generation</span><span class="chip">Go-to-Market Strategy</span>
+    <span class="chip">Brand &amp; Product Positioning</span><span class="chip">Sales Enablement</span>
+    <span class="chip">Market &amp; Competitive Research</span><span class="chip">ATL / BTL Campaigns</span>
+    <span class="chip">Trade &amp; Channel Marketing</span><span class="chip">Stakeholder Management</span>
+    <span class="chip">Sales Forecasting &amp; Target Planning</span>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Chapters</h2>
+  <div class="tl">
+    <article class="ch">
+      <div class="when">Nov 2020 – Sep 2022</div>
+      <h3>Demand Associate</h3>
+      <div class="co">Dunzo Digital Pvt Ltd</div>
+      <ul>
+        <li>Built the demand-generation strategy and managed market communications to lift product visibility and sustain demand.</li>
+        <li>Worked with the sales team to communicate value propositions, and built enablement tools for the selling process.</li>
+        <li>Led marketing initiatives that improved visibility and market performance across key segments.</li>
+        <li>Ran competitive research and ongoing market comparisons to inform strategy.</li>
+        <li>Found and entered new customer segments through targeted campaigns.</li>
+        <li>Crafted positioning and messaging that set offerings apart and widened market reach.</li>
+      </ul>
+    </article>
+    <article class="ch">
+      <div class="when">Oct 2017 – Nov 2020</div>
+      <h3>Senior Marketing Executive</h3>
+      <div class="co">KC Dairy Products Pvt Ltd, Chennai</div>
+      <ul>
+        <li>Analyzed marketing activity and built tracking platforms so managers could monitor sales targets, daily activity and open deals.</li>
+        <li>Managed promoter agencies to plan and run promotional activities.</li>
+        <li>Led branding initiatives and organized activities for retail partners to extend customer reach.</li>
+        <li>Planned and executed ATL and BTL activities supporting retail partners.</li>
+      </ul>
+    </article>
+    <article class="ch">
+      <div class="when">Jun 2016 – Oct 2017</div>
+      <h3>Sales &amp; Marketing Executive</h3>
+      <div class="co">Hiranandani Communities, Chennai</div>
+      <ul>
+        <li>Owned sales delivery against set targets, forecasting and planning monthly and quarterly goals.</li>
+        <li>Tracked market trends and competitor activity to refine strategy and support new market development.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="journey">
+  <h2>Side Quests &amp; Origins</h2>
+  <div class="two">
+    <div>
+      <h3>Achievements</h3>
+      <ul>
+        <li>Drove ATL activity through mass media and trade fairs to generate qualified leads.</li>
+        <li>Ran ATL and social media initiatives that increased sales and lead generation.</li>
+        <li>Completed industrial training at Integral Coach Factory and Ashok Leyland.</li>
+        <li>Presented a paper, “Challenging Education”, at a national conference in Kodaikanal.</li>
+        <li>Organized a national-level symposium and a 2-day state-level IEEE workshop in Chennai.</li>
+      </ul>
+    </div>
+    <div class="edu">
+      <h3>Education</h3>
+      <ul>
+        <li><b>MBA, Marketing &amp; Finance</b><span>Sri Sai Ram Institute of Technology, Chennai. 2014–2016, 7.87 CGPA</span></li>
+        <li><b>B.E., Electrical &amp; Electronics Engineering</b><span>Jeppiaar Engineering College, Chennai. 2010–2014, 7.5 CGPA</span></li>
+        <li><b>HSC</b><span>Sai Matriculation Higher Secondary School, 2010. 82.5%</span></li>
+        <li><b>SSLC</b><span>Sai Matriculation Higher Secondary School, 2008. 83.5%</span></li>
+        <li style="margin-top:1.2rem"><b>Academic project</b><span>A Study on Product Acceptability and Market Potential, Eureka Forbes Pvt. Ltd, Chennai</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 style="text-align:center">Send a Signal</h2>
+  <p style="text-align:center">The lights are on. Tap the bulbs, then get in touch.</p>
+  <div class="wall" id="wall" aria-label="Christmas lights spelling HELLO"></div>
+  <div class="contact">
+    <a class="btn solid" href="mailto:vijaykumarsrini@gmail.com">vijaykumarsrini@gmail.com</a>
+    <a class="btn" href="tel:+919940188782">+91 99401 88782</a>
+  </div>
+  <p class="fine">Madipakkam, Chennai 600091. Friends don't lie, and neither does this résumé.</p>
+</section>
+</main>
+
+<script>
+(function(){
+  var body=document.body, flip=document.getElementById('flip');
+  flip.addEventListener('click',function(){
+    var on=body.classList.toggle('upside');
+    flip.setAttribute('aria-pressed',on);
+    flip.textContent=on?'Return to Hawkins':'Flip to the Upside Down';
+  });
+
+  // Joyce's wall
+  var wall=document.getElementById('wall'), cols=['#e50914','#ffc857','#3d9bff','#42d17a','#ff7ac6'];
+  'HELLO'.split('').forEach(function(ch,i){
+    var b=document.createElement('div');
+    b.className='bulb'; b.textContent=ch; b.style.setProperty('--c',cols[i%cols.length]);
+    b.addEventListener('click',function(){b.classList.toggle('on')});
+    wall.appendChild(b);
+  });
+  var bulbs=wall.children, seen=false;
+  new IntersectionObserver(function(es){
+    if(es[0].isIntersecting&&!seen){seen=true;
+      Array.prototype.forEach.call(bulbs,function(b,i){
+        setTimeout(function(){b.classList.add('on')},500+i*450);
+      });
+    }
+  },{threshold:.5}).observe(wall);
+
+  // Floating spores / ash
+  var c=document.getElementById('spores'), x=c.getContext('2d'), W,H,P=[];
+  var still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function size(){W=c.width=innerWidth;H=c.height=innerHeight}
+  size(); addEventListener('resize',size);
+  for(var i=0;i<70;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*2.2+.6,s:Math.random()*.4+.1,d:Math.random()*Math.PI*2});
+  function tick(){
+    x.clearRect(0,0,W,H);
+    var up=body.classList.contains('upside');
+    x.fillStyle=up?'rgba(160,200,255,.55)':'rgba(255,230,200,.45)';
+    P.forEach(function(p){
+      p.d+=.01; p.x+=Math.sin(p.d)*.4; p.y+=up?-p.s:p.s;
+      if(p.y>H+5)p.y=-5; if(p.y<-5)p.y=H+5;
+      x.beginPath(); x.arc(p.x,p.y,p.r,0,6.283); x.fill();
+    });
+    if(!still)requestAnimationFrame(tick);
+  }
+  tick();
+})();
+</script>
+</body>
+</html>
